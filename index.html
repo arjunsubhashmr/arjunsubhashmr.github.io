@@ -12,7 +12,17 @@ margin:0;
 background:#0b0b0b;
 color:white;
 font-family:Arial, Helvetica, sans-serif;
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
+overflow-x:hidden;
+}
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
 }
 
 nav{
@@ -21,6 +31,10 @@ justify-content:space-between;
 align-items:center;
 padding:20px 80px;
 background:#000;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
 }
 
 nav h2{
@@ -38,7 +52,7 @@ font-size:16px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:80px;
+padding:160px 80px 100px 80px;
 }
 
 .hero-text{
@@ -85,13 +99,18 @@ border:6px solid #333;
 }
 
 .section{
-padding:80px;
+padding:100px 80px;
 max-width:900px;
 margin:auto;
 }
 
 .section h2{
 margin-bottom:20px;
+font-size:32px;
+}
+
+a{
+color:white;
 }
 
 </style>
@@ -100,15 +119,19 @@ margin-bottom:20px;
 
 <body>
 
+<div id="particles-js"></div>
+
 <nav>
+
 <h2>Arjun Subhash</h2>
 
 <div>
 <a href="#about">About</a>
 <a href="#research">Research</a>
-<a href="#cv">CV</a>
+<a href="#cv">Resume</a>
 <a href="#contact">Contact</a>
 </div>
+
 </nav>
 
 <section class="hero">
@@ -122,9 +145,10 @@ margin-bottom:20px;
 <h3>Computational Chemistry Researcher</h3>
 
 <p>
-Integrated MSc Chemistry student at the Central University of Tamil Nadu.
-My research focuses on Density Functional Theory, machine learning assisted
-catalyst design, and excited-state electronic structure analysis.
+Integrated MSc Chemistry student at the Central University of Tamil Nadu
+working in computational chemistry, focusing on Density Functional Theory,
+machine learning assisted catalyst design and excited-state properties
+of molecular systems.
 </p>
 
 <button class="btn btn1" onclick="window.location='#contact'">
@@ -149,8 +173,8 @@ LinkedIn
 
 <p>
 I am an Integrated MSc Chemistry student working in computational chemistry.
-My research interests include density functional theory, excited state
-properties of organic emitters, and machine learning approaches for catalyst design.
+My research interests include Density Functional Theory, excited-state
+electronic structure analysis and machine learning approaches for catalyst design.
 </p>
 
 </section>
@@ -160,25 +184,32 @@ properties of organic emitters, and machine learning approaches for catalyst des
 <h2>Research</h2>
 
 <p><b>Cu(I)-NHC Complexes for CO₂ Insertion</b><br>
-DFT and machine learning based study of catalyst design for efficient CO₂ insertion reactions.
+DFT and machine learning guided study for rational catalyst design
+in carbon dioxide insertion reactions.
 </p>
+
+<br>
 
 <p><b>TD-DFT Investigation of TADF Emitters</b><br>
-Benchmarking density functionals and analysing charge transfer properties of donor–acceptor emitters.
+Benchmarking density functionals and analysing charge transfer
+properties in donor–acceptor emitters.
 </p>
 
+<br>
+
 <p><b>SN2 Reactivity of N-Heterocycles</b><br>
-Computational study of activation barriers and substituent effects in SN2 reactions.
+Computational study of activation barriers and substituent effects
+in nucleophilic substitution reactions.
 </p>
 
 </section>
 
 <section id="cv" class="section">
 
-<h2>CV</h2>
+<h2>Resume</h2>
 
 <p>
-<a href="assets/cv.pdf" style="color:white;">Download my CV</a>
+<a href="assets/cv.pdf">Download my CV</a>
 </p>
 
 </section>
@@ -192,6 +223,25 @@ Computational study of activation barriers and substituent effects in SN2 reacti
 <p>LinkedIn: linkedin.com/in/arjunsubhash</p>
 
 </section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<script>
+
+particlesJS("particles-js", {
+particles: {
+number: { value: 70 },
+size: { value: 3 },
+move: { speed: 1 },
+line_linked: {
+enable: true,
+opacity: 0.2
+}
+}
+});
+
+</script>
 
 </body>
 </html>
