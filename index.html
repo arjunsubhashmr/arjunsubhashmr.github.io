@@ -15,7 +15,7 @@ font-family:Arial, Helvetica, sans-serif;
 overflow-x:hidden;
 }
 
-/* Blurred animated background */
+/* Background animation */
 
 #particles-js{
 position:fixed;
@@ -24,7 +24,7 @@ height:100%;
 top:0;
 left:0;
 z-index:-1;
-filter:blur(4px);
+filter:blur(3px);
 opacity:0.65;
 }
 
@@ -49,15 +49,16 @@ margin-left:25px;
 font-size:16px;
 }
 
-/* Hero section */
+/* Hero layout */
 
 .hero{
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:160px 80px 100px 80px;
-gap:120px;
+padding:160px 120px 100px 120px;
 }
+
+/* Text */
 
 .hero-text{
 max-width:600px;
@@ -98,16 +99,29 @@ background:#222;
 color:white;
 }
 
-/* Profile image */
+/* PROFILE IMAGE STYLE */
 
 .profile{
 margin-right:120px;
 }
 
 .profile img{
-width:180px;
+
+width:420px;
+height:420px;
+
+object-fit:cover;
+
 border-radius:50%;
-border:6px solid #333;
+
+/* thick border */
+border:8px solid #5a5a5a;
+
+/* outer shadow ring */
+box-shadow:
+0 0 0 12px rgba(255,255,255,0.05),
+0 0 40px rgba(0,0,0,0.6);
+
 }
 
 </style>
@@ -156,7 +170,9 @@ LinkedIn
 </div>
 
 <div class="profile">
+
 <img src="assets/profile.jpg">
+
 </div>
 
 </section>
@@ -166,15 +182,22 @@ LinkedIn
 <script>
 
 particlesJS("particles-js", {
+
 particles: {
+
 number: { value: 70 },
+
 size: { value: 3 },
+
 move: { speed: 1 },
+
 line_linked: {
 enable: true,
 opacity: 0.2
 }
+
 }
+
 });
 
 </script>
