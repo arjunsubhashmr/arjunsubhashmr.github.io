@@ -15,6 +15,8 @@ font-family:Arial, Helvetica, sans-serif;
 overflow-x:hidden;
 }
 
+/* Blurred animated background */
+
 #particles-js{
 position:fixed;
 width:100%;
@@ -22,11 +24,15 @@ height:100%;
 top:0;
 left:0;
 z-index:-1;
+filter:blur(3px);
+opacity:0.65;
 }
+
+/* Navigation */
 
 nav{
 display:flex;
-justify-content:space-between;
+justify-content:flex-end;
 align-items:center;
 padding:20px 80px;
 background:#000;
@@ -36,16 +42,14 @@ top:0;
 z-index:1000;
 }
 
-nav h2{
-margin:0;
-}
-
 nav a{
 color:white;
 text-decoration:none;
-margin-left:20px;
+margin-left:25px;
 font-size:16px;
 }
+
+/* Hero section */
 
 .hero{
 display:flex;
@@ -72,6 +76,8 @@ color:#bbb;
 line-height:1.6;
 }
 
+/* Buttons */
+
 .btn{
 padding:12px 24px;
 border-radius:25px;
@@ -91,10 +97,13 @@ background:#222;
 color:white;
 }
 
+/* Profile image */
+
 .profile img{
-width:320px;
+width:175px;
 border-radius:50%;
 border:6px solid #333;
+margin-right:120px;
 }
 
 </style>
@@ -107,15 +116,11 @@ border:6px solid #333;
 
 <nav>
 
-<h2>Arjun Subhash</h2>
-
-<div>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="research.html">Research</a>
 <a href="resume.html">Resume</a>
 <a href="contact.html">Contact</a>
-</div>
 
 </nav>
 
@@ -151,7 +156,6 @@ LinkedIn
 </div>
 
 </section>
-
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
