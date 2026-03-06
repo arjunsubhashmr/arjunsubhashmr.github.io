@@ -1,161 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 <meta charset="UTF-8">
-<title>Arjun Subhash</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Arjun Subhash | Computational Chemistry</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0b0b0b;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#050505;
 color:white;
 overflow-x:hidden;
-}
-
-/* Animated gradient background */
-
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:radial-gradient(circle at 30% 30%, #1a1a1a, #000);
-z-index:-2;
-animation:gradientMove 12s infinite alternate;
-}
-
-@keyframes gradientMove{
-0%{transform:scale(1);}
-100%{transform:scale(1.2);}
 }
 
 /* NAVBAR */
 
 nav{
+position:fixed;
+top:0;
+width:100%;
 display:flex;
 justify-content:flex-end;
-padding:24px 100px;
-background:#000;
-position:fixed;
-width:100%;
-top:0;
-z-index:1000;
+gap:40px;
+padding:28px 60px;
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(8px);
+z-index:10;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin-left:28px;
-font-size:16px;
+font-size:15px;
+font-weight:400;
 opacity:0.85;
+transition:0.3s;
 }
 
-/* HERO SECTION */
+nav a:hover{
+opacity:1;
+}
+
+/* HERO */
 
 .hero{
 display:flex;
 align-items:center;
 justify-content:space-between;
-max-width:1200px;
+padding:160px 120px;
+max-width:1500px;
 margin:auto;
-padding-top:160px;
-padding-left:80px;
-padding-right:80px;
-gap:80px;
 }
 
 /* TEXT */
 
 .hero-text{
-max-width:700px;
-}
-
-.hero-text h2{
-color:#cfcfcf;
-font-weight:500;
-}
-
-.hero-text h1{
-font-size:60px;
-margin:10px 0;
+max-width:720px;
 }
 
 .hero-text h3{
-color:#9a9a9a;
+font-weight:400;
+opacity:0.8;
+font-size:22px;
+margin-bottom:10px;
+}
+
+.hero-text h1{
+font-family:'Playfair Display',serif;
+font-size:72px;
+font-weight:600;
+margin-bottom:18px;
+}
+
+.hero-text h2{
+font-size:22px;
+opacity:0.7;
+margin-bottom:26px;
 }
 
 .hero-text p{
-color:#b8b8b8;
-line-height:1.7;
+line-height:1.8;
 font-size:18px;
-margin-top:25px;
+opacity:0.75;
+max-width:680px;
 }
 
 /* BUTTONS */
 
-.btn{
-padding:14px 28px;
-border-radius:28px;
-border:none;
-margin-right:14px;
-font-size:16px;
-cursor:pointer;
-margin-top:25px;
+.buttons{
+margin-top:35px;
+display:flex;
+gap:18px;
 }
 
-.btn1{
+.btn{
+padding:12px 26px;
+border-radius:30px;
+border:none;
+font-size:15px;
+cursor:pointer;
+}
+
+.btn-primary{
 background:white;
 color:black;
 }
 
-.btn2{
-background:#1f1f1f;
+.btn-secondary{
+background:#2a2a2a;
 color:white;
 }
 
 /* PROFILE IMAGE */
 
 .profile{
-position:relative;
-}
-
-/* glowing halo */
-
-.profile::before{
-content:"";
-position:absolute;
-width:260px;
-height:260px;
-background:radial-gradient(circle, rgba(255,255,255,0.12), transparent);
+width:340px;
+height:340px;
 border-radius:50%;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-z-index:-1;
-filter:blur(20px);
+border:7px solid rgba(255,255,255,0.25);
+overflow:hidden;
+box-shadow:0 0 60px rgba(0,0,0,0.8);
 }
-
-/* portrait */
 
 .profile img{
-
-width:220px;
-height:220px;
-
+width:100%;
+height:100%;
 object-fit:cover;
+}
 
-border-radius:50%;
+/* BACKGROUND PARTICLES */
 
-border:6px solid rgba(255,255,255,0.15);
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+filter:blur(2px);
+opacity:0.55;
+}
 
-box-shadow:
-0 10px 25px rgba(0,0,0,0.8),
-0 0 0 8px rgba(255,255,255,0.05);
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+gap:60px;
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.hero-text h1{
+font-size:50px;
+}
+
+.profile{
+width:260px;
+height:260px;
+}
+
+nav{
+justify-content:center;
+}
 
 }
 
@@ -175,31 +195,40 @@ box-shadow:
 
 </nav>
 
+<canvas id="bg"></canvas>
+
 <section class="hero">
 
 <div class="hero-text">
 
-<h2>Hello, I'm</h2>
+<h3>Hello, I'm</h3>
 
 <h1>Arjun Subhash</h1>
 
-<h3>Computational Chemist</h3>
+<h2>Computational Chemistry Researcher</h2>
 
 <p>
-Integrated MSc Chemistry student at the Central University of Tamil Nadu working
-in computational chemistry, focusing on Density Functional Theory, machine
-learning assisted catalyst design and excited-state properties of molecular systems.
+Integrated MSc Chemistry student working in computational chemistry,
+focusing on Density Functional Theory, machine learning assisted
+catalyst design, and excited-state properties of molecular systems.
 </p>
 
-<button class="btn btn1" onclick="window.location='contact.html'">
+<div class="buttons">
+
+<button class="btn btn-primary"
+onclick="location.href='contact.html'">
 Contact Me
 </button>
 
-<button class="btn btn2" onclick="window.open('https://www.linkedin.com/in/arjunsubhash/')">
+<button class="btn btn-secondary"
+onclick="window.open('https://www.linkedin.com/in/arjunsubhash/','_blank')">
 LinkedIn
 </button>
 
 </div>
+
+</div>
+
 
 <div class="profile">
 
@@ -208,6 +237,57 @@ LinkedIn
 </div>
 
 </section>
+
+
+<script>
+
+/* PARTICLE BACKGROUND */
+
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<120;i++){
+
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5)*0.5,
+vy:(Math.random()-0.5)*0.5
+});
+
+}
+
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+for(let p of particles){
+
+p.x+=p.vx;
+p.y+=p.vy;
+
+if(p.x<0||p.x>canvas.width)p.vx*=-1;
+if(p.y<0||p.y>canvas.height)p.vy*=-1;
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,2,0,Math.PI*2);
+ctx.fillStyle="white";
+ctx.fill();
+
+}
+
+requestAnimationFrame(draw);
+
+}
+
+draw();
+
+</script>
 
 </body>
 </html>
