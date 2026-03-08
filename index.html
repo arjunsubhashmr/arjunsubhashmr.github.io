@@ -231,6 +231,60 @@ min-width:120px;
 text-align:right;
 }
 
+/* INTERESTS SECTION */
+
+.interests-section{
+max-width:1200px;
+margin:140px auto;
+padding:0 120px;
+}
+
+.interests-title{
+font-family:'Playfair Display',serif;
+font-size:40px;
+margin-bottom:60px;
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.interests-title::after{
+content:"";
+flex:1;
+height:1px;
+background:rgba(255,255,255,0.15);
+}
+
+.interests-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.interest-card{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+padding:35px;
+border-radius:8px;
+transition:0.3s;
+}
+
+.interest-card:hover{
+background:rgba(255,255,255,0.07);
+border-color:rgba(255,255,255,0.15);
+}
+
+.interest-card h3{
+font-family:'Playfair Display',serif;
+font-size:24px;
+margin-bottom:10px;
+}
+
+.interest-card p{
+opacity:0.75;
+line-height:1.6;
+}
+  
 /* RESPONSIVE */
 
 @media(max-width:1100px){
@@ -397,6 +451,52 @@ LinkedIn
 
 
 <script>
+
+</section>
+  
+<!-- INTERESTS SECTION -->
+
+<section class="interests-section">
+
+<h2 class="interests-title">Interests & Hobbies</h2>
+
+<div class="interests-grid">
+
+<div class="interest-card">
+<h3>Computational Chemistry</h3>
+<p>
+Exploring molecular systems using Density Functional Theory and
+machine learning techniques to understand catalytic processes.
+</p>
+</div>
+
+<div class="interest-card">
+<h3>Mathematics</h3>
+<p>
+Mathematical modeling and numerical methods that underpin
+computational simulations and theoretical chemistry.
+</p>
+</div>
+
+<div class="interest-card">
+<h3>Scientific Computing</h3>
+<p>
+Developing workflows using quantum chemistry software,
+data analysis tools, and machine learning approaches.
+</p>
+</div>
+
+<div class="interest-card">
+<h3>Cinema, Music & Reading</h3>
+<p>
+Cinema for storytelling, music for reflection, and reading
+for curiosity beyond science.
+</p>
+</div>
+
+</div>
+
+</section>  
 
 /* PARTICLE BACKGROUND */
 
