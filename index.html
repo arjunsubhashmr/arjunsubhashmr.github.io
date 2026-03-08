@@ -267,13 +267,11 @@ justify-content:center;
 <body>
 
 <nav>
-
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="research.html">Research</a>
 <a href="resume.html">Resume</a>
 <a href="contact.html">Contact</a>
-
 </nav>
 
 <canvas id="bg"></canvas>
@@ -307,21 +305,20 @@ LinkedIn
 </div>
 
 <p class="location">
-⚲ Central University of Tamil Nadu, India
+📍 Central University of Tamil Nadu, India
 </p>
 
 </div>
 
 <div class="profile">
-
 <img src="assets/profile.jpg">
-
 </div>
 
 </section>
 
 
 <!-- TIMELINE SECTION -->
+
 <section class="timeline-section">
 
 <h2 class="timeline-title">Time Evolution</h2>
@@ -330,91 +327,76 @@ LinkedIn
 
 <div class="timeline-item active">
 <div class="timeline-dot"></div>
-
 <div class="timeline-row">
 <div class="timeline-content">
 <h3>Central University of Tamil Nadu</h3>
 <p>Integrated MSc Chemistry</p>
 </div>
-
 <div class="timeline-date">2021 – Present</div>
 </div>
-
 </div>
 
 <div class="timeline-item">
 <div class="timeline-dot"></div>
-
 <div class="timeline-row">
 <div class="timeline-content">
 <h3>Digital University of Kerala</h3>
 <p>Summer Internship</p>
 </div>
-
 <div class="timeline-date">2025</div>
 </div>
-
 </div>
 
 <div class="timeline-item">
 <div class="timeline-dot"></div>
-
 <div class="timeline-row">
 <div class="timeline-content">
 <h3>Srinivasa Ramanujan Institute for Basic Sciences</h3>
 <p>Summer Internship</p>
 </div>
-
 <div class="timeline-date">2024</div>
 </div>
-
 </div>
 
 <div class="timeline-item">
 <div class="timeline-dot"></div>
-
 <div class="timeline-row">
 <div class="timeline-content">
 <h3>Kerala Minerals & Metals Ltd. (KMML)</h3>
 <p>Summer Internship</p>
 </div>
-
 <div class="timeline-date">2023</div>
 </div>
-
 </div>
 
 <div class="timeline-item">
 <div class="timeline-dot"></div>
-
 <div class="timeline-row">
 <div class="timeline-content">
 <h3>Aravinda Vidyamandiram</h3>
 <p>Higher Secondary Education</p>
 </div>
-
 <div class="timeline-date">2019</div>
 </div>
-
 </div>
 
 <div class="timeline-item">
 <div class="timeline-dot"></div>
-
 <div class="timeline-row">
 <div class="timeline-content">
 <h3>Trinity Lyceum</h3>
 <p>Matriculation</p>
 </div>
-
 <div class="timeline-date">2017</div>
 </div>
-
 </div>
 
 </div>
 
 </section>
+
+
+<script>
 
 /* PARTICLE BACKGROUND */
 
@@ -427,14 +409,12 @@ canvas.height=window.innerHeight;
 let particles=[];
 
 for(let i=0;i<120;i++){
-
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 vx:(Math.random()-0.5)*0.5,
 vy:(Math.random()-0.5)*0.5
 });
-
 }
 
 function draw(){
@@ -457,12 +437,10 @@ ctx.fill();
 }
 
 requestAnimationFrame(draw);
-
 }
 
 draw();
-</script>
-</script>
+
 </script>
 
 </body>
