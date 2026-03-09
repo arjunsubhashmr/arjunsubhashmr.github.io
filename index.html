@@ -11,11 +11,7 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Inter',sans-serif;
@@ -47,9 +43,7 @@ opacity:0.85;
 transition:0.3s;
 }
 
-nav a:hover{
-opacity:1;
-}
+nav a:hover{opacity:1}
 
 /* HERO */
 
@@ -62,15 +56,9 @@ max-width:1500px;
 margin:auto;
 }
 
-.hero-text{
-max-width:720px;
-}
+.hero-text{max-width:720px;}
 
-.hero-text h3{
-opacity:0.8;
-font-size:22px;
-margin-bottom:10px;
-}
+.hero-text h3{opacity:0.8;font-size:22px;margin-bottom:10px;}
 
 .hero-text h1{
 font-family:'Playfair Display',serif;
@@ -93,11 +81,7 @@ max-width:680px;
 
 /* BUTTONS */
 
-.buttons{
-margin-top:35px;
-display:flex;
-gap:18px;
-}
+.buttons{margin-top:35px;display:flex;gap:18px;}
 
 .btn{
 padding:12px 26px;
@@ -107,15 +91,8 @@ font-size:15px;
 cursor:pointer;
 }
 
-.btn-primary{
-background:white;
-color:black;
-}
-
-.btn-secondary{
-background:#2a2a2a;
-color:white;
-}
+.btn-primary{background:white;color:black;}
+.btn-secondary{background:#2a2a2a;color:white;}
 
 /* PROFILE IMAGE */
 
@@ -139,7 +116,7 @@ object-fit:cover;
 .location{
 margin-top:22px;
 font-size:16px;
-opacity:0.7;
+opacity:0.8;
 }
 
 /* BACKGROUND PARTICLES */
@@ -157,7 +134,7 @@ opacity:0.55;
 
 .timeline-section{
 max-width:1100px;
-margin:140px auto;
+margin:160px auto;
 padding:0 120px;
 }
 
@@ -165,12 +142,12 @@ padding:0 120px;
 font-family:'Playfair Display',serif;
 font-size:42px;
 text-align:center;
-margin-bottom:80px;
+margin-bottom:100px;
 }
 
 .timeline{
 position:relative;
-margin-left:30px;
+margin-left:40px;
 }
 
 .timeline::before{
@@ -185,22 +162,32 @@ background:rgba(255,255,255,0.15);
 
 .timeline-item{
 position:relative;
-margin-bottom:60px;
-padding-left:40px;
+margin-bottom:70px;
+padding-left:50px;
+
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.timeline-item.visible{
+opacity:1;
+transform:translateY(0);
 }
 
 .timeline-dot{
 position:absolute;
-left:-7px;
+left:-8px;
 top:8px;
-width:12px;
-height:12px;
+width:14px;
+height:14px;
 background:#666;
 border-radius:50%;
 }
 
 .timeline-item.active .timeline-dot{
 background:#10b981;
+box-shadow:0 0 12px #10b981,0 0 25px #10b981;
 }
 
 .timeline-row{
@@ -211,18 +198,18 @@ gap:40px;
 }
 
 .timeline-content h3{
-font-size:20px;
-margin-bottom:6px;
+font-size:22px;
+margin-bottom:5px;
 }
 
 .timeline-content p{
-opacity:0.7;
+opacity:0.65;
 }
 
 .timeline-date{
-opacity:0.55;
-font-size:14px;
-min-width:120px;
+opacity:0.5;
+font-size:15px;
+min-width:130px;
 text-align:right;
 }
 
@@ -230,14 +217,14 @@ text-align:right;
 
 .interests-section{
 max-width:1200px;
-margin:140px auto;
+margin:160px auto;
 padding:0 120px;
 }
 
 .interests-title{
 font-family:'Playfair Display',serif;
 font-size:40px;
-margin-bottom:60px;
+margin-bottom:70px;
 display:flex;
 align-items:center;
 gap:20px;
@@ -261,7 +248,15 @@ background:rgba(255,255,255,0.04);
 border:1px solid rgba(255,255,255,0.08);
 padding:35px;
 border-radius:8px;
-transition:0.3s;
+transition:0.4s;
+
+opacity:0;
+transform:translateY(40px);
+}
+
+.interest-card.visible{
+opacity:1;
+transform:translateY(0);
 }
 
 .interest-card:hover{
@@ -279,6 +274,34 @@ opacity:0.75;
 line-height:1.6;
 }
 
+/* FOOTER */
+
+footer{
+margin-top:160px;
+padding:50px 120px;
+border-top:1px solid rgba(255,255,255,0.1);
+display:flex;
+justify-content:space-between;
+align-items:center;
+opacity:0.8;
+}
+
+.footer-icons{
+display:flex;
+gap:22px;
+}
+
+.footer-icons a{
+color:white;
+font-size:22px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.footer-icons a:hover{opacity:0.7;}
+
+footer span{opacity:0.6;font-size:14px;}
+
 </style>
 
 </head>
@@ -294,8 +317,6 @@ line-height:1.6;
 </nav>
 
 <canvas id="bg"></canvas>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -323,9 +344,7 @@ LinkedIn
 
 </div>
 
-<p class="location">
-📍 Central University of Tamil Nadu, India
-</p>
+<p class="location">📍 Central University of Tamil Nadu, India</p>
 
 </div>
 
@@ -335,8 +354,6 @@ LinkedIn
 
 </section>
 
-
-<!-- TIMELINE -->
 
 <section class="timeline-section">
 
@@ -388,12 +405,32 @@ LinkedIn
 </div>
 </div>
 
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-row">
+<div class="timeline-content">
+<h3>Aravinda Vidyamandiram</h3>
+<p>Higher Secondary Education</p>
+</div>
+<div class="timeline-date">2019</div>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-row">
+<div class="timeline-content">
+<h3>Trinity Lyceum</h3>
+<p>Matriculation</p>
+</div>
+<div class="timeline-date">2017</div>
+</div>
+</div>
+
 </div>
 
 </section>
 
-
-<!-- INTERESTS -->
 
 <section class="interests-section">
 
@@ -403,22 +440,22 @@ LinkedIn
 
 <div class="interest-card">
 <h3>Computational Chemistry</h3>
-<p>Exploring molecular systems using DFT and machine learning.</p>
+<p>Using quantum chemical methods to study molecular structure and reactivity.</p>
 </div>
 
 <div class="interest-card">
-<h3>Excited State Dynamics</h3>
-<p>Studying the behavior of molecules in electronically excited states.</p>
+<h3>Excited-State Dynamics</h3>
+<p>Investigating photophysical processes and electronic excitations in molecules.</p>
 </div>
 
 <div class="interest-card">
 <h3>Physical Chemistry</h3>
-<p>Exploring the fundamental principles governing molecular interactions, thermodynamics and chemical kinetics.</p>
+<p>Understanding molecular interactions, thermodynamics and chemical kinetics.</p>
 </div>
 
 <div class="interest-card">
 <h3>Cinema, Badminton & Cricket</h3>
-<p>Cinema for storytelling and creativity, and sports for balance, discipline and energy beyond research.</p>
+<p>Cinema for storytelling and sports for balance and energy beyond research.</p>
 </div>
 
 </div>
@@ -426,9 +463,27 @@ LinkedIn
 </section>
 
 
+<footer>
+
+<div>
+<strong>Arjun Subhash</strong><br>
+Central University of Tamil Nadu
+</div>
+
+<div class="footer-icons">
+<a href="mailto:arjunsubhash33@gmail.com">✉</a>
+<a href="https://github.com/arjunsubhashmr" target="_blank">🐙</a>
+<a href="https://www.linkedin.com/in/arjunsubhash/" target="_blank">in</a>
+</div>
+
+<span>© 2025 Arjun Subhash</span>
+
+</footer>
+
+
 <script>
 
-/* PARTICLE BACKGROUND */
+/* PARTICLES */
 
 const canvas=document.getElementById("bg");
 const ctx=canvas.getContext("2d");
@@ -448,7 +503,6 @@ vy:(Math.random()-0.5)*0.5
 }
 
 function draw(){
-
 ctx.clearRect(0,0,canvas.width,canvas.height);
 
 for(let p of particles){
@@ -470,6 +524,20 @@ requestAnimationFrame(draw);
 }
 
 draw();
+
+/* SCROLL REVEAL */
+
+const revealElements=document.querySelectorAll('.timeline-item,.interest-card');
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+}
+});
+},{threshold:0.2});
+
+revealElements.forEach(el=>observer.observe(el));
 
 </script>
 
