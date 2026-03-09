@@ -43,7 +43,6 @@ nav a{
 color:white;
 text-decoration:none;
 font-size:15px;
-font-weight:400;
 opacity:0.85;
 transition:0.3s;
 }
@@ -63,14 +62,11 @@ max-width:1500px;
 margin:auto;
 }
 
-/* TEXT */
-
 .hero-text{
 max-width:720px;
 }
 
 .hero-text h3{
-font-weight:400;
 opacity:0.8;
 font-size:22px;
 margin-bottom:10px;
@@ -79,7 +75,6 @@ margin-bottom:10px;
 .hero-text h1{
 font-family:'Playfair Display',serif;
 font-size:72px;
-font-weight:600;
 margin-bottom:18px;
 }
 
@@ -231,7 +226,7 @@ min-width:120px;
 text-align:right;
 }
 
-/* INTERESTS SECTION */
+/* INTERESTS */
 
 .interests-section{
 max-width:1200px;
@@ -271,7 +266,6 @@ transition:0.3s;
 
 .interest-card:hover{
 background:rgba(255,255,255,0.07);
-border-color:rgba(255,255,255,0.15);
 }
 
 .interest-card h3{
@@ -283,35 +277,6 @@ margin-bottom:10px;
 .interest-card p{
 opacity:0.75;
 line-height:1.6;
-}
-  
-/* RESPONSIVE */
-
-@media(max-width:1100px){
-
-.hero{
-flex-direction:column;
-text-align:center;
-gap:60px;
-}
-
-.hero-text{
-max-width:600px;
-}
-
-.hero-text h1{
-font-size:50px;
-}
-
-.profile{
-width:260px;
-height:260px;
-}
-
-nav{
-justify-content:center;
-}
-
 }
 
 </style>
@@ -330,14 +295,14 @@ justify-content:center;
 
 <canvas id="bg"></canvas>
 
+<!-- HERO -->
+
 <section class="hero">
 
 <div class="hero-text">
 
 <h3>Hello, I'm</h3>
-
 <h1>Arjun Subhash</h1>
-
 <h2>Computational Chemist</h2>
 
 <p>
@@ -359,7 +324,7 @@ LinkedIn
 </div>
 
 <p class="location">
-𖤣  Central University of Tamil Nadu, India
+📍 Central University of Tamil Nadu, India
 </p>
 
 </div>
@@ -371,7 +336,7 @@ LinkedIn
 </section>
 
 
-<!-- TIMELINE SECTION -->
+<!-- TIMELINE -->
 
 <section class="timeline-section">
 
@@ -423,37 +388,12 @@ LinkedIn
 </div>
 </div>
 
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="timeline-row">
-<div class="timeline-content">
-<h3>Aravinda Vidyamandiram</h3>
-<p>Higher Secondary Education</p>
-</div>
-<div class="timeline-date">2019</div>
-</div>
-</div>
-
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="timeline-row">
-<div class="timeline-content">
-<h3>Trinity Lyceum</h3>
-<p>Matriculation</p>
-</div>
-<div class="timeline-date">2017</div>
-</div>
-</div>
-
 </div>
 
 </section>
 
 
-<script>
-
-  
-<!-- INTERESTS SECTION -->
+<!-- INTERESTS -->
 
 <section class="interests-section">
 
@@ -463,39 +403,30 @@ LinkedIn
 
 <div class="interest-card">
 <h3>Computational Chemistry</h3>
-<p>
-Exploring molecular systems using Density Functional Theory and
-machine learning techniques to understand catalytic processes.
-</p>
+<p>Exploring molecular systems using Density Functional Theory and machine learning.</p>
 </div>
 
 <div class="interest-card">
 <h3>Mathematics</h3>
-<p>
-Mathematical modeling and numerical methods that underpin
-computational simulations and theoretical chemistry.
-</p>
+<p>Mathematical modelling and numerical methods behind computational science.</p>
 </div>
 
 <div class="interest-card">
 <h3>Scientific Computing</h3>
-<p>
-Developing workflows using quantum chemistry software,
-data analysis tools, and machine learning approaches.
-</p>
+<p>Quantum chemistry software, data analysis and scientific programming.</p>
 </div>
 
 <div class="interest-card">
 <h3>Cinema, Music & Reading</h3>
-<p>
-Cinema for storytelling, music for reflection, and reading
-for curiosity beyond science.
-</p>
+<p>Cinema for storytelling, music for reflection and reading for curiosity.</p>
 </div>
 
 </div>
 
-</section>  
+</section>
+
+
+<script>
 
 /* PARTICLE BACKGROUND */
 
