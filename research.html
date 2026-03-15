@@ -47,38 +47,7 @@ transition:0.3s;
 
 nav a:hover{opacity:1}
 
-/* PAGE CONTAINER */
-
-.container{
-max-width:900px;
-margin:auto;
-padding:180px 40px;
-}
-
-.container h1{
-font-family:'Playfair Display',serif;
-font-size:48px;
-margin-bottom:60px;
-}
-
-/* RESEARCH BLOCK */
-
-.research-item{
-margin-bottom:60px;
-}
-
-.research-item h3{
-font-size:24px;
-margin-bottom:10px;
-}
-
-.research-item p{
-opacity:0.75;
-line-height:1.8;
-font-size:17px;
-}
-
-/* PARTICLE BACKGROUND */
+/* BACKGROUND PARTICLES */
 
 canvas{
 position:fixed;
@@ -87,6 +56,69 @@ left:0;
 z-index:-1;
 filter:blur(2px);
 opacity:0.55;
+}
+
+/* PAGE */
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:180px 60px;
+}
+
+.container h1{
+font-family:'Playfair Display',serif;
+font-size:52px;
+margin-bottom:70px;
+}
+
+/* RESEARCH GRID */
+
+.research-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+}
+
+/* CARD */
+
+.research-card{
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:12px;
+overflow:hidden;
+transition:0.4s;
+backdrop-filter:blur(10px);
+}
+
+.research-card:hover{
+transform:translateY(-8px);
+background:rgba(255,255,255,0.06);
+}
+
+/* IMAGE */
+
+.research-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+/* TEXT */
+
+.research-content{
+padding:26px;
+}
+
+.research-content h3{
+font-size:22px;
+margin-bottom:12px;
+}
+
+.research-content p{
+opacity:0.75;
+line-height:1.7;
+font-size:16px;
 }
 
 </style>
@@ -98,7 +130,7 @@ opacity:0.55;
 <nav>
 <a href="index.html">Home</a>
 <a href="research.html">Research</a>
-<a href="assets/cv.pdf" download>Resume</a>
+<a href="assets/Arjun_Subhash_CV.pdf" download>Resume</a>
 </nav>
 
 <canvas id="bg"></canvas>
@@ -107,40 +139,72 @@ opacity:0.55;
 
 <h1>Research</h1>
 
-<div class="research-item">
+<div class="research-grid">
 
-<h3>Cu(I)-NHC Complexes for CO₂ Insertion</h3>
+<!-- Catalysis -->
+
+<div class="research-card">
+
+<img src="https://images.unsplash.com/photo-1581092921461-7d65ca45c9d2">
+
+<div class="research-content">
+
+<h3>Catalysis</h3>
 
 <p>
-DFT and machine learning guided investigation of Cu(I)-NHC complexes to
-understand catalytic CO₂ insertion mechanisms.
+Exploring catalytic reaction mechanisms using density functional theory (DFT) calculations. 
+My work focuses on understanding how ligand environments influence catalytic activity 
+and reaction pathways, particularly in metal–NHC systems involved in CO₂ activation 
+and insertion processes.
 </p>
 
 </div>
+</div>
 
-<div class="research-item">
+<!-- Excited state -->
 
-<h3>TADF Emitters</h3>
+<div class="research-card">
+
+<img src="https://images.unsplash.com/photo-1628592102751-ba83b0314276">
+
+<div class="research-content">
+
+<h3>Excited State Dynamics</h3>
 
 <p>
-TD-DFT benchmarking and excited state analysis of donor–acceptor emitters
-for thermally activated delayed fluorescence.
+Investigating photophysical behaviour of molecular systems using computational 
+electronic structure methods. These studies focus on excited-state properties, 
+charge transfer processes and the theoretical understanding of thermally activated 
+delayed fluorescence (TADF) emitters.
 </p>
 
 </div>
+</div>
 
-<div class="research-item">
+<!-- Machine learning -->
 
-<h3>SN2 Reactivity of N-Heterocycles</h3>
+<div class="research-card">
+
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+
+<div class="research-content">
+
+<h3>Machine Learning in Chemistry</h3>
 
 <p>
-Computational study of transition states and activation barriers
-in nucleophilic substitution reactions.
+Applying machine learning approaches to interpret computational data and reveal 
+structure–property relationships in catalytic systems. Data-driven models help 
+simplify complex chemical datasets and provide deeper insight into reaction 
+trends and catalyst design.
 </p>
 
 </div>
+</div>
 
 </div>
+
+</div>
+
 
 <script>
 
