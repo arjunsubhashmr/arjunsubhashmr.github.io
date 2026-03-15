@@ -1,35 +1,92 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Research | Arjun Subhash</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+*{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-background:#0b0b0b;
+font-family:'Inter',sans-serif;
+background:#050505;
 color:white;
-font-family:Arial;
-margin:0;
+overflow-x:hidden;
 }
 
+/* NAVBAR */
+
 nav{
+position:fixed;
+top:0;
+width:100%;
 display:flex;
-justify-content:space-between;
-padding:20px 80px;
-background:black;
+justify-content:flex-end;
+gap:40px;
+padding:28px 60px;
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(8px);
+z-index:10;
 }
 
 nav a{
 color:white;
-margin-left:20px;
 text-decoration:none;
+font-size:15px;
+opacity:0.85;
+transition:0.3s;
 }
+
+nav a:hover{opacity:1}
+
+/* PAGE CONTAINER */
 
 .container{
 max-width:900px;
 margin:auto;
-padding:100px 80px;
+padding:180px 40px;
+}
+
+.container h1{
+font-family:'Playfair Display',serif;
+font-size:48px;
+margin-bottom:60px;
+}
+
+/* RESEARCH BLOCK */
+
+.research-item{
+margin-bottom:60px;
+}
+
+.research-item h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.research-item p{
+opacity:0.75;
+line-height:1.8;
+font-size:17px;
+}
+
+/* PARTICLE BACKGROUND */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+filter:blur(2px);
+opacity:0.55;
 }
 
 </style>
@@ -39,22 +96,18 @@ padding:100px 80px;
 <body>
 
 <nav>
-
-<h2>Arjun Subhash</h2>
-
-<div>
 <a href="index.html">Home</a>
-<a href="about.html">About</a>
 <a href="research.html">Research</a>
-<a href="resume.html">Resume</a>
-<a href="contact.html">Contact</a>
-</div>
-
+<a href="assets/Arjun_Subhash_CV.pdf" download>Resume</a>
 </nav>
+
+<canvas id="bg"></canvas>
 
 <div class="container">
 
 <h1>Research</h1>
+
+<div class="research-item">
 
 <h3>Cu(I)-NHC Complexes for CO₂ Insertion</h3>
 
@@ -63,7 +116,9 @@ DFT and machine learning guided investigation of Cu(I)-NHC complexes to
 understand catalytic CO₂ insertion mechanisms.
 </p>
 
-<br>
+</div>
+
+<div class="research-item">
 
 <h3>TADF Emitters</h3>
 
@@ -72,7 +127,9 @@ TD-DFT benchmarking and excited state analysis of donor–acceptor emitters
 for thermally activated delayed fluorescence.
 </p>
 
-<br>
+</div>
+
+<div class="research-item">
 
 <h3>SN2 Reactivity of N-Heterocycles</h3>
 
@@ -83,5 +140,54 @@ in nucleophilic substitution reactions.
 
 </div>
 
+</div>
+
+<script>
+
+/* PARTICLES */
+
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<120;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5)*0.5,
+vy:(Math.random()-0.5)*0.5
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+for(let p of particles){
+
+p.x+=p.vx;
+p.y+=p.vy;
+
+if(p.x<0||p.x>canvas.width)p.vx*=-1;
+if(p.y<0||p.y>canvas.height)p.vy*=-1;
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,2,0,Math.PI*2);
+ctx.fillStyle="white";
+ctx.fill();
+
+}
+
+requestAnimationFrame(draw);
+}
+
+draw();
+
+</script>
+
 </body>
 </html>
+```
